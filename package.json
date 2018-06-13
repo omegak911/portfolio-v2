@@ -1,0 +1,30 @@
+{
+  "name": "portfolio-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omegak911/portfolio-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omegak911/portfolio-v2/issues"
+  },
+  "homepage": "https://github.com/omegak911/portfolio-v2#readme",
+  "dependencies": {
+    "@zeit/next-css": "^0.2.0",
+    "next": "^6.0.3",
+    "react": "^16.4.1",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.4.1",
+    "react-on-visible": "^1.5.0"
+  }
+}
