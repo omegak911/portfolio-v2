@@ -72,9 +72,7 @@ class App extends Component {
           html, body {
             height: 100%;
           }
-        `
-        }</style>
-        <style jsx>{`
+
           .transition {
             opacity: 0;
             transition: all 900ms ease-in-out;
@@ -85,7 +83,9 @@ class App extends Component {
             opacity: 1;
             visibility: visible;
           }
-
+        `
+        }</style>
+        <style jsx>{`
           .topContainer {
             background-color: rgba(225, 243, 243, 0.63);
             min-height: 100vh;
