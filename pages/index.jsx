@@ -8,8 +8,6 @@ import Navbar from './Navigation/Navbar';
 import Applications from './Applications/Applications';
 import Tech from './Tech/Tech';
 
-import './App.css';
-
 class App extends Component {
   constructor(props) {
     super(props)
@@ -38,9 +36,13 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <Home />
+        <div id="home" className="topContainer">
+          <Home />
+        </div>
         <OnVisible className="transition">
-          <Applications />
+          <div id="applications" className="topContainer">
+            <Applications />
+          </div>
         </OnVisible>
         <OnVisible className="transition">
           <div id="tech" className="topContainer">
@@ -53,6 +55,43 @@ class App extends Component {
         <OnVisible className="transition">
           <Contact />
         </OnVisible>
+        <style jsx>{`
+        body {
+          margin: 0;
+        }
+
+        h2 {
+          padding-top: 50px;
+        }
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        html, body {
+          height: 100%;
+        }
+
+        .transition {
+          opacity: 0;
+          transition: all 900ms ease-in-out;
+          visibility: hidden;
+        }
+
+        .transition.visible {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .topContainer {
+          background-color: rgba(225, 243, 243, 0.63);
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        `}</style>
       </div>
     )
   }
