@@ -3,8 +3,6 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Stars from './Stars';
 
-// import './Tech.css';
-
 class Tech extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +18,7 @@ class Tech extends Component {
           { tech: 'React Redux', solid: [1,2,3,4], empty: [5] },
           { tech: 'jQuery', solid: [1,2,3,4], empty: [5] },
           { tech: 'React Native', solid: [1,2,3], empty: [4,5] },
+          { tech: 'Next.js', solid: [1,2,3], empty: [4,5] },
         ],
         BackEnd: [
           { tech: 'Node.js', solid: [1,2,3,4,5], empty: [] },
@@ -54,7 +53,7 @@ class Tech extends Component {
     const { Storage } = this.state;
     let delay = 0;
     
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 10; i++) {
       setTimeout(() => this.setState({ FrontEnd: [...this.state.FrontEnd, Storage.FrontEnd[i]]}), delay)
       if (i < 8) {
         setTimeout(() => this.setState({ BackEnd: [...this.state.BackEnd, Storage.BackEnd[i]]}), delay)
@@ -86,15 +85,15 @@ class Tech extends Component {
                     </div>
                     <div className="techStack">
                       <ReactCSSTransitionGroup
-                        className="techAnimation"
                         component='div'
+                        style={{'display': 'flex', 'flex-wrap': 'wrap'}}
                         transitionName="techAnimation"
                         transitionAppear={true}
                         transitionAppearTimeout={2000}
                         transitionEnter={true}
                         transitionEnterTimeout={2000}
                         transitionLeave={false}>
-                        <div className="techAnimation">
+                        {/* <div className="techAnimation"> */}
                           {this.state[techType].map((tech, index) =>
                             <div className="eachTech" key={index}>
                               <div id="octagon">
@@ -103,7 +102,7 @@ class Tech extends Component {
                               </div>
                             </div>
                           )}
-                        </div>
+                        {/* </div> */}
                       </ReactCSSTransitionGroup>
                     </div>
                   </div>
@@ -203,11 +202,6 @@ class Tech extends Component {
             height: 0;
           }
 
-          .techAnimation {
-            display: flex;
-            flex-wrap: wrap;
-          }
-
           .techAnimation-appear {
             transform: translate(1000px);
           }
@@ -221,13 +215,12 @@ class Tech extends Component {
           }
           .techAnimation-enter.techAnimation-enter-active {
             transform: translate(0%);
-            transition: transform 1s ease-in-out;
+            transition: transform 2s ease-in-out;
           }
           `}</style>
         </div>
     )
   }
-
 }
 
 export default Tech;

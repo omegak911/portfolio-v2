@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OnVisible, { setDefaultProps } from 'react-on-visible';
+import Head from 'next/head';
 
 // import Blog from './Blog/Blog';
 import Contact from './Contact/Contact';
@@ -35,6 +36,9 @@ class App extends Component {
 
     return (
       <div>
+        <Head>
+          <title>Kin K Chan</title>
+        </Head>
         <Navbar />
         <div id="home" className="topContainer">
           <Home />
@@ -55,43 +59,43 @@ class App extends Component {
         <OnVisible className="transition">
           <Contact />
         </OnVisible>
+        <style jsx global>{
+          `
+          body {
+            margin: 0;
+          }
+
+          html {
+            scroll-behavior: smooth;
+          }
+
+          html, body {
+            height: 100%;
+          }
+        `
+        }</style>
         <style jsx>{`
-        body {
-          margin: 0;
-        }
+          .transition {
+            opacity: 0;
+            transition: all 900ms ease-in-out;
+            visibility: hidden;
+          }
 
-        h2 {
-          padding-top: 50px;
-        }
+          .transition.visible {
+            opacity: 1;
+            visibility: visible;
+          }
 
-        html {
-          scroll-behavior: smooth;
-        }
-
-        html, body {
-          height: 100%;
-        }
-
-        .transition {
-          opacity: 0;
-          transition: all 900ms ease-in-out;
-          visibility: hidden;
-        }
-
-        .transition.visible {
-          opacity: 1;
-          visibility: visible;
-        }
-
-        .topContainer {
-          background-color: rgba(225, 243, 243, 0.63);
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        `}</style>
+          .topContainer {
+            background-color: rgba(225, 243, 243, 0.63);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          `}
+          </style>
       </div>
     )
   }
