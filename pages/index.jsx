@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import OnVisible, { setDefaultProps } from 'react-on-visible';
 import Head from 'next/head';
 
-// import Blog from './Blog/Blog';
 import Contact from './Contact/Contact';
 import Home from './Home/Home';
 import Navbar from './Navigation/Navbar';
 import Applications from './Applications/Applications';
 import Tech from './Tech/Tech';
+
+import { indexCSS, globalCSS } from './indexCSS';
 
 class App extends Component {
   constructor(props) {
@@ -53,49 +54,11 @@ class App extends Component {
             {showTech && <Tech />}
           </div>
         </OnVisible>
-        {/* <OnVisible className="transition">
-          <Blog />
-        </OnVisible> */}
         <OnVisible className="transition">
           <Contact />
         </OnVisible>
-        <style jsx global>{
-          `
-          body {
-            margin: 0;
-          }
-
-          html {
-            scroll-behavior: smooth;
-          }
-
-          html, body {
-            height: 100%;
-          }
-
-          .transition {
-            opacity: 0;
-            transition: all 900ms ease-in-out;
-            visibility: hidden;
-          }
-
-          .transition.visible {
-            opacity: 1;
-            visibility: visible;
-          }
-        `
-        }</style>
-        <style jsx>{`
-          .topContainer {
-            background-color: rgba(225, 243, 243, 0.63);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-          }
-          `}
-          </style>
+        <style jsx global>{globalCSS}</style>
+        <style jsx>{indexCSS}</style>
       </div>
     )
   }
