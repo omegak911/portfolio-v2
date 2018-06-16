@@ -14,7 +14,7 @@ class Navbar extends Component {
         <a href="#applications">Applications</a>
         <a href="#tech">Tech</a>
         {/* <a href="#blog">Blog</a> */}
-        <a href="mailto:xkinchanx@gmail.com">Contact</a>
+        <a href="#contact">Contact</a>
         <style jsx>{navbarCSS}</style>
       </div>
     )
