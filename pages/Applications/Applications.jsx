@@ -38,7 +38,7 @@ class Applications extends Component {
           url: 'https://omegak911.github.io/',
           special: [
             ['Heroku Website', 'https://personalportfolio-v2.herokuapp.com/'],
-            ['Next.js Codebase', 'https://github.com/omegak911/portfolio-v2']
+            ['Next.js Codebase', 'https://github.com/omegak911/portfolio-v2/tree/deployment']
           ]
         }
         // {
