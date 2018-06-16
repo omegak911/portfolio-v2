@@ -27,7 +27,7 @@ export default css
 
   .appContainer img {
     border-bottom: 2px solid black;
-    height: 85%;
+    height: 100%;
   }
 
   .innerAppContainer {
@@ -36,6 +36,7 @@ export default css
     margin-left: 10px;
     margin-top: auto;
     margin-bottom: auto;
+    position: relative;
   }
 
   .midAppContainer {
@@ -54,5 +55,30 @@ export default css
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+
+  .modal {
+    align-items: center;
+    background-color: rgba(181, 181, 181, 0.5);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    z-index: 400;
+  }
+
+  .modalInfo {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: center;
+    width: 80%;
+  }
+
+  .modalInfo a {
+    color: rgb(66, 158, 250);
   }
 `
